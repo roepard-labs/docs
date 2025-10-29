@@ -1,0 +1,124 @@
+@import url('../css/variables.css');
+
+:root {
+  /* Map docs theme to HomeLab palette */
+  --theme-color: var(--homelab-primary);
+  --accent-color: var(--homelab-yellow);
+  --text-color: var(--homelab-white);
+  --docs-bg: var(--homelab-black);
+  --docs-sidebar-bg: var(--homelab-dark);
+  --docs-sidebar-border: var(--homelab-border);
+  --sidebar-width: 280px;
+  /* Tab blocks */
+  --docsifytabs-border-color: var(--homelab-border);
+  --docsifytabs-border-px: 1px;
+  --docsifytabs-border-radius-px: ;
+  --docsifytabs-margin: 1.5em 0;
+
+  /* Tabs */
+  --docsifytabs-tab-background: #f8f8f8;
+  --docsifytabs-tab-background--active: var(--docsifytabs-content-background);
+  --docsifytabs-tab-color: #999;
+  --docsifytabs-tab-color--active: inherit;
+  --docsifytabs-tab-highlight-px: 3px;
+  --docsifytabs-tab-highlight-color: var(--theme-color, currentColor);
+  --docsifytabs-tab-padding: 0.6em 1em;
+
+  /* Tab content */
+  --docsifytabs-content-background: inherit;
+  --docsifytabs-content-padding: 1.5rem;
+}
+
+
+
+.markdown-section code {
+  color: var(--accent-color);
+  /* Subtle tint of theme color */
+  background: color-mix(in srgb, var(--theme-color) 15%, transparent);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+pre[data-lang]::before {
+  content: attr(data-lang);
+  background: var(--theme-color);
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+  background-color: var(--docs-sidebar-bg) !important; /* Fondo oscuro */
+  border-right: 1px solid var(--docs-sidebar-border) !important;
+}
+
+body, .markdown-section {
+  background-color: var(--docs-bg) !important;
+  color: var(--text-color) !important;
+}
+
+a {
+  color: var(--accent-color) !important; /* Amarillo institucional */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .app-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #ffffff !important;
+}
+.sidebar .app-name img,
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0;
+  text-align: center;
+  width:40px;
+  vertical-align:middle;
+  margin-right:10px;
+}
+
+.sidebar .app-name,
+.sidebar .app-name .sidebar-title {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* docs/styles.css */
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--theme-color, #155DFC);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+}
+.back-to-top:hover {
+  opacity: 0.9;
+}
+
+/* docs/styles.css */
+.markdown-section table img {
+  width: 40px;      /* alto y ancho iguales */
+  height: 40px;
+  border-radius: 50%; /* opcional: redondear */
+}
